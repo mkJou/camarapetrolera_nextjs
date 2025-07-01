@@ -1,0 +1,79 @@
+        /* Estilos para la sección Acerca de la Cámara */
+        .acerca-camara-section {
+          padding: 80px 0;
+          background: #191919;
+          color: white;
+        }
+
+        .acerca-camara-container {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 20px;
+          text-align: center;
+        }
+
+        .acerca-camara-title {
+          font-size: 48px;
+          font-weight: 700;
+          color: white;
+          margin-bottom: 10px;
+        }
+
+        .acerca-camara-subtitle {
+          font-size: 18px;
+          color: #878686;
+          margin-bottom: 20px;
+        }
+
+        .acerca-camara-separator {
+          width: 80px;
+          height: 4px;
+          background: #ff9900;
+          margin: 0 auto 30px;
+        }
+
+        .acerca-camara-content p {
+          font-size: 16px;
+          line-height: 1.8;
+          color: white;
+          max-width: 800px;
+          margin: 0 auto;
+        }
+
+=== MEJORAS PENDIENTES PARA LOS CAPÍTULOS ===
+
+DESARROLLO DE CARACTERÍSTICAS PROPIAS PARA CADA CAPÍTULO:
+
+Los capítulos actuales comparten mucha información similar. Es necesario desarrollar:
+
+1. CAPÍTULO ANZOÁTEGUI:
+   - Información específica sobre la industria petrolera en la región
+   - Empresas destacadas del estado
+   - Proyectos específicos de la zona
+   - Datos económicos regionales
+
+2. CAPÍTULO CARABOBO:
+   - Enfoque en el tejido industrial del estado
+   - Empresas manufactureras específicas
+   - Historia industrial de la región
+   - Proyectos de desarrollo local
+
+3. CAPÍTULO FALCÓN:
+   - Características geográficas y económicas únicas
+   - Industrias específicas de la región
+   - Potencial energético regional
+   - Desarrollo de infraestructura
+
+4. CAPÍTULO MONAGAS:
+   - Historia petrolera de la región
+   - Empresas y proyectos específicos
+   - Desarrollo económico regional
+   - Características únicas del estado
+
+5. CAPÍTULO ZULIA:
+   - Importancia histórica en la industria petrolera
+   - Lago de Maracaibo y su relevancia
+   - Empresas y proyectos emblemáticos
+   - Desarrollo económico regional
+
+OBJETIVO: Cada capítulo debe tener contenido diferenciado que refleje la realidad específica de cada región venezolana.

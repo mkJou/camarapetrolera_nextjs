@@ -1,0 +1,282 @@
+[
+  {
+    "_id": {
+      "$oid": "64a1b2c3d4e5f6789abcdef01"
+    },
+    "nombre": "PETROCONSULTORES VENEZUELA",
+    "region": "Anzoátegui",
+    "sector": "Exploración y Evaluación",
+    "descripcion": "Empresa especializada en servicios de consultoría geológica y geofísica para la industria petrolera. Ofrecemos estudios sísmicos, análisis de reservorios y evaluación de yacimientos.",
+    "telefono": "0281-2651234",
+    "email": "info@petroconsultores.com.ve",
+    "fechaCreacion": {
+      "$date": "2024-01-15T09:30:00.000Z"
+    },
+    "fechaActualizacion": {
+      "$date": "2024-12-15T14:20:30.500Z"
+    },
+    "fechaModificacion": {
+      "$date": "2024-12-15T14:20:30.500Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "64a1b2c3d4e5f6789abcdef02"
+    },
+    "nombre": "DRILLING SERVICES FALCON",
+    "region": "Falcón",
+    "sector": "Perforación y Completamiento",
+    "descripcion": "Servicios integrales de perforación de pozos petroleros, completamiento y reacondicionamiento. Tecnología de punta y personal altamente calificado.",
+    "telefono": "0269-2451789",
+    "email": "operaciones@drillfalcon.com.ve",
+    "fechaCreacion": {
+      "$date": "2024-03-20T11:45:15.250Z"
+    },
+    "fechaActualizacion": {
+      "$date": "2024-12-10T16:30:45.800Z"
+    },
+    "fechaModificacion": {
+      "$date": "2024-12-10T16:30:45.800Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "64a1b2c3d4e5f6789abcdef03"
+    },
+    "nombre": "ZULIA PETROLEUM EQUIPMENT",
+    "region": "Zulia",
+    "sector": "Bienes y Servicios Transversales",
+    "descripcion": "Suministro y mantenimiento de equipos para la industria petrolera. Distribuidor autorizado de bombas, válvulas, sistemas de control y equipos de seguridad industrial.",
+    "telefono": "0261-7892345",
+    "email": "ventas@zuliaequipment.com.ve",
+    "fechaCreacion": {
+      "$date": "2024-02-10T08:15:30.750Z"
+    },
+    "fechaActualizacion": {
+      "$date": "2024-12-18T12:45:20.300Z"
+    },
+    "fechaModificacion": {
+      "$date": "2024-12-18T12:45:20.300Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "64a1b2c3d4e5f6789abcdef04"
+    },
+    "nombre": "MONAGAS LOGÍSTICA PETROLERA",
+    "region": "Monagas",
+    "sector": "Logística",
+    "descripcion": "Servicios logísticos especializados para el sector de hidrocarburos. Transporte de personal, materiales y equipos. Gestión de almacenes y distribución.",
+    "telefono": "0291-6543210",
+    "email": "logistica@monagaspetro.com.ve",
+    "fechaCreacion": {
+      "$date": "2024-05-05T13:20:45.150Z"
+    },
+    "fechaActualizacion": {
+      "$date": "2024-12-12T09:15:10.600Z"
+    },
+    "fechaModificacion": {
+      "$date": "2024-12-12T09:15:10.600Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "64a1b2c3d4e5f6789abcdef05"
+    },
+    "nombre": "CARABOBO REFINERY SERVICES",
+    "region": "Carabobo",
+    "sector": "Tratamiento",
+    "descripcion": "Servicios especializados en refinación y tratamiento de hidrocarburos. Mantenimiento de plantas, optimización de procesos y control de calidad.",
+    "telefono": "0241-8765432",
+    "email": "servicios@caraboborefi.com.ve",
+    "fechaCreacion": {
+      "$date": "2024-04-12T10:35:20.400Z"
+    },
+    "fechaActualizacion": {
+      "$date": "2024-12-08T15:50:35.900Z"
+    },
+    "fechaModificacion": {
+      "$date": "2024-12-08T15:50:35.900Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "64a1b2c3d4e5f6789abcdef06"
+    },
+    "nombre": "ORIENTE PRODUCTION COMPANY",
+    "region": "Anzoátegui",
+    "sector": "Producción",
+    "descripcion": "Empresa dedicada a la producción y extracción de petróleo crudo. Operación de campos petroleros, optimización de producción y servicios de workover.",
+    "telefono": "0281-5674321",
+    "email": "produccion@orientepetro.com.ve",
+    "fechaCreacion": {
+      "$date": "2024-06-18T14:10:55.800Z"
+    },
+    "fechaActualizacion": {
+      "$date": "2024-12-20T11:25:40.200Z"
+    },
+    "fechaModificacion": {
+      "$date": "2024-12-20T11:25:40.200Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "64a1b2c3d4e5f6789abcdef07"
+    },
+    "nombre": "VENEZUELAN SOLAR ENERGY",
+    "region": "Carabobo",
+    "sector": "Energías Renovables",
+    "descripcion": "Desarrollo e implementación de proyectos de energía solar para instalaciones petroleras. Soluciones sustentables y reducción de huella de carbono en operaciones industriales.",
+    "telefono": "0241-3456789",
+    "email": "proyectos@vensolar.com.ve",
+    "fechaCreacion": {
+      "$date": "2024-07-25T16:40:12.950Z"
+    },
+    "fechaActualizacion": {
+      "$date": "2024-12-22T13:55:25.400Z"
+    },
+    "fechaModificacion": {
+      "$date": "2024-12-22T13:55:25.400Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "64b2c3d4e5f6789abcdef11"
+    },
+    "nombre": "MARACAIBO OFFSHORE DRILLING",
+    "region": "Zulia",
+    "sector": "Perforación y Completamiento",
+    "descripcion": "Empresa especializada en perforación offshore en el Lago de Maracaibo. Servicios de perforación direccional, completamiento de pozos marinos y workover submarino con tecnología de última generación.",
+    "telefono": "0261-7234567",
+    "email": "operaciones@maracaibooffshore.com.ve",
+    "fechaCreacion": {
+      "$date": "2024-02-08T07:45:20.300Z"
+    },
+    "fechaActualizacion": {
+      "$date": "2024-12-15T16:30:45.800Z"
+    },
+    "fechaModificacion": {
+      "$date": "2024-12-15T16:30:45.800Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "64b2c3d4e5f6789abcdef12"
+    },
+    "nombre": "ZULIANA DE EXPLORACIÓN SÍSMICA",
+    "region": "Zulia",
+    "sector": "Exploración y Evaluación",
+    "descripcion": "Servicios geofísicos especializados en exploración sísmica 3D y 4D en el occidente venezolano. Interpretación sísmica, modelado geológico y evaluación de prospectos petroleros en la Cuenca del Lago de Maracaibo.",
+    "telefono": "0261-8456789",
+    "email": "geofisica@zulianaexploracion.com.ve",
+    "fechaCreacion": {
+      "$date": "2024-01-22T09:15:35.150Z"
+    },
+    "fechaActualizacion": {
+      "$date": "2024-12-18T11:20:55.600Z"
+    },
+    "fechaModificacion": {
+      "$date": "2024-12-18T11:20:55.600Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "64b2c3d4e5f6789abcdef13"
+    },
+    "nombre": "OCCIDENTAL PETROLEUM LOGISTICS",
+    "region": "Zulia",
+    "sector": "Logística",
+    "descripcion": "Servicios logísticos integrales para la industria petrolera del occidente. Transporte marítimo en el Lago de Maracaibo, suministro de materiales a plataformas offshore y gestión de almacenes especializados.",
+    "telefono": "0261-6789012",
+    "email": "logistica@occidentalpetro.com.ve",
+    "fechaCreacion": {
+      "$date": "2024-03-14T12:30:40.750Z"
+    },
+    "fechaActualizacion": {
+      "$date": "2024-12-10T14:45:25.900Z"
+    },
+    "fechaModificacion": {
+      "$date": "2024-12-10T14:45:25.900Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "64b2c3d4e5f6789abcdef14"
+    },
+    "nombre": "MARACAIBO PRODUCTION SERVICES",
+    "region": "Zulia",
+    "sector": "Producción",
+    "descripcion": "Optimización de producción petrolera en campos maduros del Zulia. Servicios de levantamiento artificial, fracturamiento hidráulico, estimulación de pozos y recuperación mejorada de petróleo.",
+    "telefono": "0261-5432109",
+    "email": "produccion@maracaiboproduction.com.ve",
+    "fechaCreacion": {
+      "$date": "2024-04-18T15:20:15.400Z"
+    },
+    "fechaActualizacion": {
+      "$date": "2024-12-12T10:35:50.200Z"
+    },
+    "fechaModificacion": {
+      "$date": "2024-12-12T10:35:50.200Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "64b2c3d4e5f6789abcdef15"
+    },
+    "nombre": "REFINERÍA DEL LAGO SERVICIOS",
+    "region": "Zulia",
+    "sector": "Tratamiento",
+    "descripcion": "Servicios especializados en refinación y procesamiento de crudo pesado del Lago de Maracaibo. Mantenimiento de plantas de refinación, control de procesos y optimización de rendimientos de destilación.",
+    "telefono": "0261-4567890",
+    "email": "servicios@refineriadelago.com.ve",
+    "fechaCreacion": {
+      "$date": "2024-05-25T11:10:30.850Z"
+    },
+    "fechaActualizacion": {
+      "$date": "2024-12-20T13:25:40.300Z"
+    },
+    "fechaModificacion": {
+      "$date": "2024-12-20T13:25:40.300Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "64b2c3d4e5f6789abcdef16"
+    },
+    "nombre": "ZULIA INDUSTRIAL EQUIPMENT",
+    "region": "Zulia",
+    "sector": "Bienes y Servicios Transversales",
+    "descripcion": "Fabricación y suministro de equipos industriales para la industria petrolera zuliana. Tanques de almacenamiento, estructuras metálicas, sistemas de tuberías y equipos de seguridad industrial especializados.",
+    "telefono": "0261-3456781",
+    "email": "ventas@zuliaindustrial.com.ve",
+    "fechaCreacion": {
+      "$date": "2024-06-30T08:45:25.950Z"
+    },
+    "fechaActualizacion": {
+      "$date": "2024-12-22T15:50:15.700Z"
+    },
+    "fechaModificacion": {
+      "$date": "2024-12-22T15:50:15.700Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "64b2c3d4e5f6789abcdef17"
+    },
+    "nombre": "ENERGÍA EÓLICA COSTA ORIENTAL",
+    "region": "Zulia",
+    "sector": "Energías Renovables",
+    "descripcion": "Desarrollo de proyectos de energía eólica en la costa oriental del Lago de Maracaibo para alimentar instalaciones petroleras. Soluciones híbridas eólico-solar para reducir la dependencia de combustibles fósiles en operaciones.",
+    "telefono": "0261-2345678",
+    "email": "proyectos@eolicaoriental.com.ve",
+    "fechaCreacion": {
+      "$date": "2024-07-12T14:25:50.100Z"
+    },
+    "fechaActualizacion": {
+      "$date": "2024-12-25T12:40:30.450Z"
+    },
+    "fechaModificacion": {
+      "$date": "2024-12-25T12:40:30.450Z"
+    }
+  }
+] 
