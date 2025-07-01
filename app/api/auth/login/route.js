@@ -39,12 +39,7 @@ export async function POST(request) {
       }
     }
     
-    console.log('Usuario encontrado:', usuario.Nombre, usuario.Correo);
 
-    // Verificar contraseña
-    console.log('Verificando contraseña...');
-    console.log('Password enviado:', password);
-    console.log('Password en BD:', usuario.Contraseña);
     
     let contraseñaValida = false;
     
@@ -58,11 +53,11 @@ export async function POST(request) {
         contraseñaValida = false;
       }
     } else {
-      console.log('Contraseña en texto plano detectada');
+
       contraseñaValida = password === usuario.Contraseña;
     }
     
-    console.log('¿Contraseña válida?', contraseñaValida);
+
     
     if (!contraseñaValida) {
       return NextResponse.json(

@@ -50,7 +50,6 @@ export default function AccederPage() {
         setError(data.error || 'Error al iniciar sesión');
       }
     } catch (error) {
-      console.error('Error:', error);
       setError('Error de conexión. Intenta de nuevo.');
     } finally {
       setLoading(false);
