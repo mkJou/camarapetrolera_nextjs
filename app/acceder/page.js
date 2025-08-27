@@ -339,7 +339,7 @@ export default function AccederPage() {
              </form>
 
              <div className="forgot-password">
-               <a href="#forgot">¿Olvidaste tu contraseña?</a>
+               <a href="/recuperar-password">¿Olvidaste tu contraseña?</a>
              </div>
           </div>
 

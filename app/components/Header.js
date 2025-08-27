@@ -2,8 +2,12 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import LanguageSelector from './LanguageSelector';
+import { useTranslation } from '../hooks/useTranslation';
 
 export default function Header() {
+  const { t } = useTranslation();
+  
   return (
     <>
       <style jsx>{`
@@ -212,14 +216,14 @@ export default function Header() {
           <nav>
             <ul className="nav-menu">
               <li className="nav-item">
-                <Link href="/" className="nav-link">Inicio</Link>
+                <Link href="/" className="nav-link">{t('Inicio')}</Link>
               </li>
               <li className="nav-item">
-                <Link href="/lacamara" className="nav-link">La Cámara</Link>
+                <Link href="/lacamara" className="nav-link">{t('La Cámara')}</Link>
               </li>
               <li className="nav-item dropdown">
                 <a href="#" className="nav-link dropdown-toggle">
-                  Capítulos Regionales<i className="fas fa-chevron-down"></i>
+                  {t('Capítulos Regionales')}<i className="fas fa-chevron-down"></i>
                 </a>
                 <div className="dropdown-menu">
                   <a href="/capitulo-anzoategui" className="dropdown-item">Anzoátegui</a>
@@ -230,16 +234,19 @@ export default function Header() {
                 </div>
               </li>
               <li className="nav-item">
-                <Link href="/directorio" className="nav-link">Directorio</Link>
+                <Link href="/directorio" className="nav-link">{t('Directorio')}</Link>
               </li>
               <li className="nav-item">
-                <Link href="/noticias" className="nav-link">Noticias</Link>
+                <Link href="/noticias" className="nav-link">{t('Noticias')}</Link>
               </li>
               <li className="nav-item">
-                <Link href="/afiliarse" className="nav-link">Afiliarse</Link>
+                <Link href="/afiliarse" className="nav-link">{t('Afiliarse')}</Link>
               </li>
               <li className="nav-item">
-                <Link href="/acceder" className="nav-link">Acceder</Link>
+                <Link href="/acceder" className="nav-link">{t('Acceder')}</Link>
+              </li>
+              <li className="nav-item">
+                <LanguageSelector />
               </li>
             </ul>
           </nav>

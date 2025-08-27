@@ -16,13 +16,11 @@ export default function ClientLayout({ children }) {
     }
   }, []);
   
-  // Durante la hidratación inicial, mostrar siempre el header/footer
+  // Durante la hidratación inicial, no mostrar header/footer
   if (!mounted) {
     return (
       <>
-        <Header />
         {children}
-        <Footer />
       </>
     );
   }
@@ -33,7 +31,6 @@ export default function ClientLayout({ children }) {
     <>
       {!isDashboard && <Header />}
       {children}
-      {!isDashboard && <Footer />}
     </>
   );
 } 

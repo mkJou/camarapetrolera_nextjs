@@ -440,7 +440,9 @@ export default function Dashboard() {
       formData.append('organizador', nombreCompleto);
       
       // Agregar estado automáticamente del usuario
-      formData.append('estado', user?.estado || 'Anzoátegui');
+      const estadoUsuario = user?.estado || 'Anzoátegui';
+      console.log('Estado del usuario para el evento:', estadoUsuario);
+      formData.append('estado', estadoUsuario);
       
       if (formularioEvento.imagen) {
         formData.append('imagen', formularioEvento.imagen);
@@ -1386,17 +1388,18 @@ export default function Dashboard() {
                 <p>Cargando eventos...</p>
               </div>
             ) : (
-              <div style={{backgroundColor: 'white', borderRadius: '8px', overflow: 'hidden', boxShadow: '0 2px 4px rgba(0,0,0,0.1)'}}>
-                <table style={{width: '100%', borderCollapse: 'collapse'}}>
+              <div style={{backgroundColor: 'white', borderRadius: '8px', overflow: 'hidden', boxShadow: '0 2px 4px rgba(0,0,0,0.1)', marginLeft: '-20px', marginRight: '-20px'}}>
+                <div style={{overflowX: 'auto', minWidth: '100%', padding: '0 20px'}}>
+                  <table style={{width: '100%', minWidth: '1100px', borderCollapse: 'collapse'}}>
                   <thead>
                     <tr style={{backgroundColor: '#f8f9fa'}}>
-                      <th style={{padding: '15px', textAlign: 'left', borderBottom: '1px solid #dee2e6', fontWeight: '600'}}>Evento</th>
-                      <th style={{padding: '15px', textAlign: 'left', borderBottom: '1px solid #dee2e6', fontWeight: '600'}}>Organizador</th>
-                      <th style={{padding: '15px', textAlign: 'center', borderBottom: '1px solid #dee2e6', fontWeight: '600'}}>Fecha Evento</th>
-                      <th style={{padding: '15px', textAlign: 'left', borderBottom: '1px solid #dee2e6', fontWeight: '600'}}>Estado</th>
-                      <th style={{padding: '15px', textAlign: 'center', borderBottom: '1px solid #dee2e6', fontWeight: '600'}}>Estado Evento</th>
-                      <th style={{padding: '15px', textAlign: 'center', borderBottom: '1px solid #dee2e6', fontWeight: '600'}}>Fecha Creación</th>
-                      <th style={{padding: '15px', textAlign: 'center', borderBottom: '1px solid #dee2e6', fontWeight: '600'}}>Acciones</th>
+                      <th style={{padding: '15px', textAlign: 'left', borderBottom: '1px solid #dee2e6', fontWeight: '600', width: '20%'}}>Evento</th>
+                      <th style={{padding: '15px', textAlign: 'left', borderBottom: '1px solid #dee2e6', fontWeight: '600', width: '15%'}}>Organizador</th>
+                      <th style={{padding: '15px', textAlign: 'center', borderBottom: '1px solid #dee2e6', fontWeight: '600', width: '15%'}}>Fecha Evento</th>
+                      <th style={{padding: '15px', textAlign: 'left', borderBottom: '1px solid #dee2e6', fontWeight: '600', width: '12%'}}>Estado</th>
+                      <th style={{padding: '15px', textAlign: 'center', borderBottom: '1px solid #dee2e6', fontWeight: '600', width: '15%'}}>Estado Evento</th>
+                      <th style={{padding: '15px', textAlign: 'center', borderBottom: '1px solid #dee2e6', fontWeight: '600', width: '15%'}}>Fecha Creación</th>
+                      <th style={{padding: '15px', textAlign: 'center', borderBottom: '1px solid #dee2e6', fontWeight: '600', width: '8%'}}>Acciones</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -1553,7 +1556,8 @@ export default function Dashboard() {
                     )}
                   </tbody>
                 </table>
-              </div>
+                  </div>
+                </div>
             )}
 
             {/* Modal del formulario de eventos */}
@@ -1725,9 +1729,15 @@ export default function Dashboard() {
                           color: '#666'
                         }}
                       />
+
                       <div style={{ fontSize: '12px', color: '#666', marginTop: '5px' }}>
                         El estado se asigna automáticamente según tu perfil
                       </div>
+                      {user?.estado === 'Anzoátegui' && (
+                        <div style={{ fontSize: '12px', color: '#ff6b35', marginTop: '5px', fontWeight: '600' }}>
+                          ⚠️ Si tu estado no es Anzoátegui, haz logout y login nuevamente para actualizar tu información
+                        </div>
+                      )}
                     </div>
 
                     <div style={{ display: 'flex', gap: '10px', justifyContent: 'flex-end', marginTop: '20px' }}>
@@ -2262,9 +2272,8 @@ export default function Dashboard() {
         width: '250px',
         background: 'white',
         boxShadow: '2px 0 4px rgba(0,0,0,0.1)',
-        marginTop: '70px',
-        height: 'calc(100vh - 70px)',
-        padding: '20px 0'
+        height: '100vh',
+        padding: '70px 0 20px 0'
       }}>
         <ul style={{ listStyle: 'none', padding: '0', margin: '0' }}>
           <li 
@@ -2343,10 +2352,10 @@ export default function Dashboard() {
       {/* Contenido Principal */}
       <main style={{
         flex: 1,
-        marginTop: '70px',
-        marginLeft: '250px',
-        padding: '30px',
-        overflowY: 'auto'
+        marginLeft: '50px',
+        padding: '100px 30px 30px 30px',
+        overflowY: 'auto',
+        height: '100vh'
       }}>
         {renderContent()}
       </main>

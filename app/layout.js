@@ -4,6 +4,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import ClientLayout from './components/ClientLayout';
+import { LanguageProvider } from './contexts/LanguageContext';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,9 +34,11 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ClientLayout>
-          {children}
-        </ClientLayout>
+        <LanguageProvider>
+          <ClientLayout>
+            {children}
+          </ClientLayout>
+        </LanguageProvider>
       </body>
     </html>
   );

@@ -3,6 +3,25 @@ import connectToDatabase from '../../../../lib/db';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 
+// Función para formatear nombres de estados con acentos y mayúsculas
+const formatearEstado = (estado) => {
+  if (!estado) return 'Anzoátegui';
+  
+  const estados = {
+    'anzoategui': 'Anzoátegui',
+    'anzoátegui': 'Anzoátegui',
+    'zulia': 'Zulia',
+    'carabobo': 'Carabobo',
+    'monagas': 'Monagas',
+    'falcon': 'Falcón',
+    'falcón': 'Falcón',
+    'general': 'General'
+  };
+  
+  const estadoLower = estado.toLowerCase();
+  return estados[estadoLower] || estado;
+};
+
 export async function POST(request) {
   try {
     const { email, password } = await request.json();
@@ -18,20 +37,27 @@ export async function POST(request) {
     const { db } = await connectToDatabase();
     const usuariosCollection = db.collection('Usuarios');
 
-    // Buscar usuario por email
+    // Buscar usuario por email (probar ambos formatos de campo)
     console.log('Buscando usuario con email:', email.toLowerCase());
     let usuario = await usuariosCollection.findOne({ 
-      Correo: email.toLowerCase() 
+      $or: [
+        { Correo: email.toLowerCase() },
+        { correo: email.toLowerCase() }
+      ]
     });
 
     if (!usuario) {
       console.log('Usuario no encontrado para email:', email);
       // Intentar buscar sin considerar mayúsculas/minúsculas
       usuario = await usuariosCollection.findOne({ 
-        Correo: { $regex: new RegExp(`^${email}$`, 'i') }
+        $or: [
+          { Correo: { $regex: new RegExp(`^${email}$`, 'i') } },
+          { correo: { $regex: new RegExp(`^${email}$`, 'i') } }
+        ]
       });
       
       if (!usuario) {
+        console.log('Usuario no encontrado incluso con regex');
         return NextResponse.json(
           { error: 'Credenciales inválidas' },
           { status: 401 }
@@ -39,27 +65,50 @@ export async function POST(request) {
       }
     }
     
+    console.log('Usuario encontrado:', {
+      id: usuario._id,
+      nombre: usuario.Nombre || usuario.nombre,
+      apellido: usuario.Apellido || usuario.apellido,
+      correo: usuario.Correo || usuario.correo,
+      estado: usuario.Estado || usuario.estado,
+      tieneContraseña: !!(usuario.Contraseña || usuario.contraseña)
+    });
+    
 
     
     let contraseñaValida = false;
     
+    // Obtener la contraseña del usuario (probar ambos formatos de campo)
+    const contraseñaUsuario = usuario.Contraseña || usuario.contraseña;
+    
+    if (!contraseñaUsuario) {
+      console.log('No se encontró campo de contraseña');
+      return NextResponse.json(
+        { error: 'Credenciales inválidas' },
+        { status: 401 }
+      );
+    }
+    
     // Verificar si la contraseña está hasheada (empieza con $2a$ o $2b$)
-    if (usuario.Contraseña.startsWith('$2a$') || usuario.Contraseña.startsWith('$2b$')) {
+    if (contraseñaUsuario.startsWith('$2a$') || contraseñaUsuario.startsWith('$2b$')) {
       console.log('Contraseña hasheada detectada, usando bcrypt');
       try {
-        contraseñaValida = await bcrypt.compare(password, usuario.Contraseña);
+        contraseñaValida = await bcrypt.compare(password, contraseñaUsuario);
       } catch (error) {
         console.error('Error con bcrypt:', error);
         contraseñaValida = false;
       }
     } else {
-
-      contraseñaValida = password === usuario.Contraseña;
+      console.log('Contraseña en texto plano, comparando directamente');
+      contraseñaValida = password === contraseñaUsuario;
     }
     
 
     
+    console.log('Resultado de verificación de contraseña:', contraseñaValida);
+    
     if (!contraseñaValida) {
+      console.log('Contraseña incorrecta para usuario:', email);
       return NextResponse.json(
         { error: 'Credenciales inválidas' },
         { status: 401 }
@@ -70,20 +119,23 @@ export async function POST(request) {
     const token = jwt.sign(
       { 
         userId: usuario._id,
-        email: usuario.Correo,
-        nombre: usuario.Nombre,
+        email: usuario.Correo || usuario.correo,
+        nombre: usuario.Nombre || usuario.nombre,
+        apellido: usuario.Apellido || usuario.apellido,
+        estado: formatearEstado(usuario.Estado || usuario.estado),
         rol: usuario.rol || 'user'
       },
-      process.env.JWT_SECRET || 'tu-secreto-jwt',
+      process.env.JWT_SECRET,
       { expiresIn: '24h' }
     );
 
     // Respuesta exitosa con datos del usuario (sin contraseña)
     const usuarioSinContraseña = {
       _id: usuario._id,
-      nombre: usuario.Nombre,
-      apellido: usuario.Apellido,
-      correo: usuario.Correo,
+      nombre: usuario.Nombre || usuario.nombre,
+      apellido: usuario.Apellido || usuario.apellido,
+      correo: usuario.Correo || usuario.correo,
+      estado: formatearEstado(usuario.Estado || usuario.estado),
       rol: usuario.rol || 'user'
     };
 

@@ -1,0 +1,1 @@
+# Crear archivo .env en la raíz del proyecto con las siguientes variables:

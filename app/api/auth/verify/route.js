@@ -18,15 +18,18 @@ export async function GET(request) {
     }
 
     // Verificar el token
-    const decoded = jwt.verify(token, process.env.JWT_SECRET || 'tu-secreto-jwt');
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
-    // Token válido
+    // Token válido con información completa del usuario
     return NextResponse.json({
       valid: true,
       user: {
         userId: decoded.userId,
-        email: decoded.email || decoded.correo,
-        nombre: decoded.nombre
+        email: decoded.email,
+        nombre: decoded.nombre,
+        apellido: decoded.apellido,
+        estado: decoded.estado,
+        rol: decoded.rol
       }
     });
 

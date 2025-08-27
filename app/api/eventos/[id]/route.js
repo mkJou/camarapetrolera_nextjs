@@ -105,8 +105,9 @@ export async function PUT(request, { params }) {
       }
     }
     
+    const id = await params.id;
     const resultado = await db.collection('eventos').updateOne(
-      { _id: new ObjectId(params.id) },
+      { _id: new ObjectId(id) },
       { $set: datosActualizacion }
     );
     
@@ -133,15 +134,16 @@ export async function PUT(request, { params }) {
 export async function DELETE(request, { params }) {
   try {
     const { db } = await connectToDatabase();
+    const id = await params.id;
     
-    if (!ObjectId.isValid(params.id)) {
+    if (!ObjectId.isValid(id)) {
       return NextResponse.json(
         { error: 'ID de evento inválido' },
         { status: 400 }
       );
     }
     
-    const resultado = await db.collection('eventos').deleteOne({ _id: new ObjectId(params.id) });
+    const resultado = await db.collection('eventos').deleteOne({ _id: new ObjectId(id) });
     
     if (resultado.deletedCount === 0) {
       return NextResponse.json(
